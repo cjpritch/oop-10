@@ -59,6 +59,61 @@ const managerPrompt = () => {
 };
 
 // inquirer prompts for Engineer
+const engineerPrompt = () => {
+    return inquirer.prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'What is the name of the engineer you are adding?',
+            validate: nameInput => {
+                if (nameInput) {
+                  return true;
+                } else {
+                  console.log('Engineer name required');
+                  return false;
+                }
+              }
+        },
+        {
+            type: 'input',
+            name: 'id',
+            message: "What is the id number of the engineer?",            
+            validate: idInput => {
+                if (idInput) {
+                  return true;
+                } else {
+                  console.log('An id number is required');
+                  return false;
+                }
+              }
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: "What is the email address for the engineer?",            
+            validate: emailInput => {
+                if (emailInput) {
+                  return true;
+                } else {
+                  console.log('An email address is required');
+                  return false;
+                }
+              }
+        },
+        {
+            type: 'input',
+            name: 'github',
+            message: "What is the github username for the engineer?",            
+            validate: githubInput => {
+                if (githubInput) {
+                  return true;
+                } else {
+                  console.log('A github username for the engineer is required');
+                  return false;
+                }
+              }
+        }
+    ])
+};
 
-// inquirer prompts for Intern
 
