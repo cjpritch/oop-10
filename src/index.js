@@ -116,4 +116,64 @@ const engineerPrompt = () => {
     ])
 };
 
+// inquirer prompts for Intern
+const internPrompt = () => {
+    return inquirer.prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'What is the name of the intern you are adding?',
+            validate: nameInput => {
+                if (nameInput) {
+                  return true;
+                } else {
+                  console.log('Intern name required');
+                  return false;
+                }
+              }
+        },
+        {
+            type: 'input',
+            name: 'id',
+            message: "What is the id number of the intern?",            
+            validate: idInput => {
+                if (idInput) {
+                  return true;
+                } else {
+                  console.log('An id number is required');
+                  return false;
+                }
+              }
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: "What is the email address for the intern?",            
+            validate: emailInput => {
+                if (emailInput) {
+                  return true;
+                } else {
+                  console.log('An email address is required');
+                  return false;
+                }
+              }
+        },
+        {
+            type: 'input',
+            name: 'school',
+            message: "What is the school the intern attends?",            
+            validate: schoolInput => {
+                if (schoolInput) {
+                  return true;
+                } else {
+                  console.log('A school name is required');
+                  return false;
+                }
+              }
+        }
+    ])
+};
+
+
+
 
