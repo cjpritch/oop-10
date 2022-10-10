@@ -1,4 +1,7 @@
 const inquirer  = require("inquirer");
+const { createManager } = require("../lib/Manager");
+const { createEngineer } = require('../lib/Engineer');
+const { createIntern } = require("../lib/Intern");
 
 // inquirer prompts for Manager
 const managerPrompt = () => {
@@ -55,7 +58,8 @@ const managerPrompt = () => {
                 }
               }
         }
-    ])
+        // creates new manager object
+    ]).then(createManager);
 };
 
 // inquirer prompts for Engineer
@@ -113,7 +117,8 @@ const engineerPrompt = () => {
                 }
               }
         }
-    ])
+        // creates new engineer object 
+    ]).then(createEngineer)
 };
 
 // inquirer prompts for Intern
@@ -171,7 +176,8 @@ const internPrompt = () => {
                 }
               }
         }
-    ])
+        // creates new intern object
+    ]).then(createIntern)
 };
 
 
