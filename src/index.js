@@ -59,7 +59,7 @@ const managerPrompt = () => {
               }
         }
         // creates new manager object
-    ]).then(createManager);
+    ]).then(createManager).then(engineerPrompt);
 };
 
 // inquirer prompts for Engineer
@@ -118,7 +118,7 @@ const engineerPrompt = () => {
               }
         }
         // creates new engineer object 
-    ]).then(createEngineer)
+    ]).then(createEngineer).then(internPrompt);
 };
 
 // inquirer prompts for Intern
@@ -177,9 +177,7 @@ const internPrompt = () => {
               }
         }
         // creates new intern object
-    ]).then(createIntern)
+    ]).then(createIntern).then(process.exit)
 };
 
-
-
-
+module.exports = { managerPrompt };
